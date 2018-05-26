@@ -49,31 +49,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    public void saveScripture(View view){
-
-        Context context = getApplicationContext();
-        SharedPreferences data = context.getSharedPreferences(preference, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = data.edit();
-
-        EditText bookText       =  (EditText)findViewById(R.id.bookText);
-        EditText chapterText    =  (EditText)findViewById(R.id.chapterText);
-        EditText verseText      =  (EditText)findViewById(R.id.verseText);
-
-        String book     = bookText.getText().toString();
-        String chapter  = chapterText.getText().toString();
-        String verse    = verseText.getText().toString();
-
-        editor.putString("bookText",book);
-        editor.putString("chapterText",chapter);
-        editor.putString("verseText",verse);
-
-        editor.apply();
-
-        Toast.makeText(getApplicationContext(), "Scripture saved!", Toast.LENGTH_SHORT).show();
-
-    }
-
     public void loadScripture(View view){
         SharedPreferences data = getApplicationContext().getSharedPreferences(preference,Context.MODE_PRIVATE);
 
